@@ -112,7 +112,8 @@ function InitializeFolders
 function WriteLog
 {
     Param(
-        <# Can be null or empty #> $message
+        #<# Can be null or empty #> 
+        $message
     )
 
     $timestampedMessage = $("[" + [System.DateTime]::Now + "] " + $message) | % {  
