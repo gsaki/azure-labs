@@ -133,7 +133,7 @@ try
     InitializeFolders
     WriteLog "Going to set DNS address(es) $DNSAddresses"
     $r1 = (Get-DnsClientServerAddress | Where-Object {$_.InterfaceAlias -Like "Ethernet*"} | Select-Object InterfaceIndex -Unique).InterfaceIndex
-    Set-DnsClientServerAddress -InterfaceIndex $r1 -ServerAddresses "$DNSAddresses"    
+    Set-DnsClientServerAddress -InterfaceIndex $r1 -ServerAddresses ("$DNSAddresses")    
     WriteLog $("Success.")
 }
 
